@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-import django_heroku
 import dj_database_url
 from decouple import config
 from pathlib import Path
@@ -131,7 +130,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 
-
-# STATICFILES_STORAGE= 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# django_heroku.settings(locals())
