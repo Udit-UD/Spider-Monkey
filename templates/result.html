@@ -1,0 +1,553 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpiderMonkey | {{term}}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'Images/uplogo.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+    /*{% load static %}*/
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&family=Roboto:wght@500&display=swap');
+
+    
+    nav{
+        overflow: hidden;
+        display: flex;
+        width: 100%;
+        height: 75px;
+        justify-content: space-around;
+        background-color: #f1f1f1;
+        margin: 0px;
+    
+    }
+    .box1{
+        width: 14%;
+        height: 100%;
+        margin: 0px 0px;
+        display: flex;
+        align-items: center;
+    }
+    .box{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    .content img{
+        height: 65px;
+        width: 120px;
+    }
+    ul{
+        display: flex;
+        list-style: none;
+        margin: 8px;
+        padding: 8px;
+    }
+    ul a{
+        margin: 10px;
+    }
+    li{
+        font-family: 'Raleway', sans-serif;
+        color: #675c5c;
+        padding: 0px 10px;
+    }
+    li:hover{
+        color:black;
+    }
+    span img{
+        width: 40px;
+        height: 40px;
+        margin: 0px 10px;
+        opacity: 0.8;
+    }
+    #atchull{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .chull img{
+        width: 79px;
+        height: 96px;
+    }
+    span img:hover{
+        opacity: 1;
+    
+    }
+    
+    /* nav ends */
+    
+    /* main result starts */
+    .cont{
+        display: flex;
+        width: 100%;
+        position: relative;
+        background: #fcf8f8;
+    }
+    .filter{
+        width: 310px;
+        height: 1000px;
+        padding: 8px 12px;
+    }
+    .vs{
+        border:1px solid grey;
+        width: 0px;
+    }
+    .res{
+        margin-left: 5px;
+        width: 100%;
+    }
+    .rehead{
+        display: flex;
+        width: 50%;
+        height: auto;
+        align-items: center;
+        padding: 5px;
+    }
+    .rehead img{
+        width: 70px;
+        height: 70px;
+        /* opacity: 0.8; */
+    }
+    .primary{
+        font-size: 1.7rem;
+        padding: 3px;
+        font-family: 'Roboto Slab', serif;
+        margin: 0px;
+        color: rgb(95 88 88);
+    }
+    .keyword{
+        font-size: 1.12rem;
+        padding: 0px 8px;
+        margin: 0px;
+    }
+    .third{
+        margin: 0px;
+        padding: 0px 3px;
+        justify-content: center;
+        display: flex;
+        font-family: 'Roboto Slab', serif;
+        font-size: 0.8rem;
+        color: rgb(39, 39, 39);
+        align-items: center;
+    }
+    .items{
+        display: flex;
+        flex-wrap: wrap;
+    
+        justify-content: space-evenly;
+        margin: 2px;
+        padding: 0px;
+        width: 100%;
+        height: auto;
+    }
+    .item a{
+        padding: 5px;
+        height: auto;
+    }
+    .item{
+        position: relative;
+        margin: 3px;
+        padding: 5px;
+        min-height: 324px;
+        width: 290px;
+        overflow: hidden;
+        border-right: 1px solid gray;
+        border-bottom: 1px solid gray;
+    }
+    .tag{
+        position: absolute;
+        right: 1%;
+        top: 5%;
+        height: 60px;
+        width: 60px;
+    }
+    .item img{
+        display: block;
+        margin: auto;
+        margin-top: 3px;
+        padding: 0px;
+        width: 70%;
+        height: 65%;
+    }
+    .second{
+        color: black;
+        font-family: 'Roboto slab';
+        font-size: 0.8rem;
+        padding-top: 10px;
+        margin: 0px;
+    }
+    
+    /* footer */
+    footer{
+        width: 100%;
+        height: 400px;
+        padding: 2px;
+        border: 1px solid grey;
+    }
+    .social{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+    }
+    h4{
+        font-family: 'Lato', sans-serif;
+        
+    }
+    .social img{
+        height: 30spx;
+        width: 30px;
+        margin: 0px 2px;
+    }
+    .fcont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .partition1{
+        width: 30%;
+        height: 250px;
+        float: left;
+        padding-left: 25px;
+    }
+    .vr{
+        border: 1px solid grey;
+        height: 250px;
+        width: 0px;
+    }
+    .partition1 img{
+        margin-top: 12px;
+        margin-bottom: 2px;
+        height: 90px;
+        width: 155px;
+    }
+    .partition1 h3{
+        text-align: left;
+        margin-top: 3px;
+        font-size: 1.2rem;
+        margin-left: 28px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 300;
+    }
+    .partition1 form{
+        display: flex;
+        margin-left: 28px;
+    }
+    .partition1 input{
+        height: 35px;
+        padding: 2px 10px;
+        border-radius: 2px;
+        border: 2px solid grey;
+    }
+    .tet p{
+        color: grey;
+        text-align: justify;
+        font-size: 0.8rem;
+        padding: 2px;
+        margin: 0px;
+        
+    }
+    .tet{
+        margin-left: 28px;
+        padding: 0px;
+        width: 300px;
+    }
+    .partition1 button{
+        background-color: black;
+        color: white;
+        padding: 5px 20px;
+        border-top-right-radius: 4px;
+    }
+    .partition{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        height: 250px;
+        padding: 20px;
+    }
+    #offer{
+        width: 15%;
+    }
+    .partition h3{
+        font-family: 'Kanit', sans-serif;
+        font-weight: bold;
+        color: black;
+    }
+    
+    .partition h4{
+        color: grey;
+        font-weight: 100;
+        text-align: justify;
+    }
+    #self{
+        width: 70%;
+        padding: 25px;
+    }
+    h3{
+        text-align: center;
+        font-size: 1rem;
+    }
+    #price{
+        font-size: 1.0rem;
+        text-decoration: underline;
+        color: rgb(45 123 14);
+    }
+    h4{
+        font-family: 'Lato', sans-serif;
+        font-size: 0.99rem;
+        font-weight: 500;
+    }
+    .filter img{
+        width: 100%;
+        height: 500px;
+    }
+/* Loading screen */
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; 
+        transition: opacity 0.5s ease;
+        opacity: 1; 
+        pointer-events: auto;
+    }
+
+    .overlay-hidden #loading-overlay {
+        opacity: 0;
+        pointer-events: none; /* Prevent interactions with hidden overlay */
+    }
+
+    .loading-spinner {
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #ffffff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+
+    .search-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 2%;
+    }
+
+    .search-input{
+        width: 250px;
+        height: 25px;
+        box-sizing: border-box;
+        font-size: 1.0rem;
+        border: 2px solid rgb(36, 36, 36);
+        border-radius: 4px;
+        background-color: #ececec;
+        background-image: url("{% static 'Images/searchicon.png' %}");
+        background-position: 8px -2px;
+        background-repeat: no-repeat;
+        padding: 12px 15px 12px 40px;
+        transition: width 0.4s ease-in-out;
+    }
+    .search-input:focus{
+        width: 400px;
+    }
+    .btn{
+        border-radius: 4px;
+        padding: 5px 20px;
+        font-size: 0.95rem;
+        background-color: #4f4f4f;
+        color: white;
+        border: 2px solid rgb(0, 0, 0);
+    }
+    .btn:hover{
+        background-color: #d64d4d;
+        cursor: pointer;
+        transition: all ease 0.3s;
+    }
+
+</style>
+<body>
+    <nav>
+
+        <section class="box" id="mainnav">
+            <div class="content">
+                <ul>
+                    <a href="#"><li>Men</li></a>
+                    <a href="#"><li>Women</li></a>
+                    <a href="#"><li>Kids</li></a>
+                </ul>
+            </div>
+            <div class="content">
+                <a href="/">
+                    <img src="{% static 'Images\logo.png' %}" alt="">
+                </a>
+            </div>
+            <div class="content">
+                <ul>
+                    <a href="#"><li>Clothes</li></a>
+                    <a href="#"><li>Mobiles</li></a>
+                    <a href="#"><li>Laptops</li></a>
+                </ul>
+            </div>
+        </section>
+        
+    </nav>
+
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            document.getElementById('loading-overlay').style.display = 'none';
+        };
+    window.onload = function() {
+        document.body.classList.add('overlay-hidden');
+    };
+
+    </script>
+    
+    <div class="cont">
+        <div class="filter">
+            <img src="{% static 'Images/spiddy.png' %}">
+        </div>
+        <div class="vs"></div>
+        <div class="res">
+            <div class="search-container">
+                <section class="rehead">
+                    <img src="{% static 'Images/description_FILL0_wght400_GRAD0_opsz48.png' %}" alt="">
+                    <span class="fuf">
+                        <h1 class="primary">Search Results</h1>
+                        <h3 class="third">Showing {{total}} items related to keyword: <p class="keyword">{{term}}</p></h3>
+                    </span>
+                </section>
+
+                <section class="form-container">
+                    <form action="search" id="search-form" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="text" class="search-input" placeholder="Name of product">  
+                        <button class="btn" onclick="titleChange()" id="buttonn">Search</button>
+                    </form>
+                </section>
+            </div>
+
+
+
+            <div class="items" id="shuffled-items">
+                {% for n, p in data.items%}
+                <div class="item"> 
+                    <div class="tag">
+                        {% if p.3 == "Flipkart" %}
+                        <img src="{%static 'Images/flipkart_logo.png'%}" alt="" style="padding: 1px; width: 60px; height: 60px;">
+                        {% elif p.3 == "Snapdeal"%}
+                        <img src="{%static 'Images/snapdeal_logo.png'%}" alt=""style="padding: 1px; width: 50px; height: 50px;">
+                        {% elif p.3 == "Bewakoof"%}
+                        <img src="{%static 'Images/bewakoof_logo.png'%}" alt=""style="padding: 1px; width: 50px; height: 50px;">
+                        {% endif %}
+                    </div>
+                    <a href="{{ p.1 }}" target="_blank" class="links">
+                        <img alt="{{ p.2 }}" src="{{ n }}" onerror="this.onerror=null; this.src='{% static 'Images/Defaul.png' %}'">
+                        <span class="details" style="display: flex; flex-direction: column; align-items: flex-start; padding-left: 10px ;">
+                            <h2 class="second">{{ p.2 }}</h2>
+                            <h2 class="second" id="price">{{ p.0 }} only</h2>
+                        </span>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="social">
+            <a href="#">
+                <img src="{% static 'Images/instalogo.png' %}" alt="" class="soc">
+            </a>
+            <a href="#">
+                <img src="{% static 'Images/linkedinlogo.png' %}" alt="" class="soc">
+            </a>
+            <a href="#">
+                <img src="{% static 'Images/twitterlogo.png' %}" alt="" class="soc">
+            </a>
+            <a href="#">
+                <img src="{% static 'Images/facebooklogo.png' %}" alt="" class="soc">
+            </a>
+            <h4>#spidermonkey</h4>
+        </div>
+        <div class="fcont">
+            <div class="partition1">
+                <img src="{% static 'Images/logo.png' %}" alt="">
+                <h3>get latest updates:</h3>
+                <form action="" class="tell">
+                    <input type="text" placeholder="Email address">
+                    <button>SIGN UP</button>
+                </form>
+                <div class="tet">
+                    <p>by signing up to our newsletter you are agreeing to our<br> privacy policy
+                        please note: only new subscribers <br>and customers will receive an email</p>
+                </div>
+            </div>
+            <div class="vr">        </div>
+            <div class="partition">
+                <div id="offer">
+                    <a href="index.html">
+                        <h3>Home</h3></a>
+                    <a href="#">
+                        <h4>Services</h4></a>
+                    <a href="#">
+                        <h4>About us</h4>
+                    </a>
+                    <a href="#">
+                        <h4>Idea</h4>
+                    </a>
+                    <a href="#">
+                        <h4>Offer</h4>
+                    </a>
+                    <a href="#">
+                        <h4>Sites</h4>
+                    </a>
+    
+                </div>
+                <div id="self">
+                    <h3>About founder</h3>
+                    <h4>
+                        This is the idea of shopping geeks, who know how to design a website. Being a young mind, we too have experienced the time complexity in shopping and confusion caused due to innumerable products. To solve this query, we created this website as our minor project in college that will be helpful to everyone accessing it for online shopping. <br> That will be helpful for the users to buy products efficiently and with an increased pace by selecting our filters offered on the website. <br> SpiderMonkey is nothing but a tool which can be used to compare prices of a product on different websites. <br> <center> Happy Shopping!</center>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+</body>
+
+</html>
