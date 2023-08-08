@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-)@a*j@dp+p*@aac=cur2mt3wciq^%)4j35@@4g2r^$n@orig02
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'SpiderMonkey.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -128,9 +128,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Added manually
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR / "static")
-]
+STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
+
 
 # STATICFILES_STORAGE= 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
